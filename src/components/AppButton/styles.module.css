@@ -1,0 +1,32 @@
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid rgba(26, 127, 232, 0.8);
+  outline-offset: 3px;
+}
+
+.button[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

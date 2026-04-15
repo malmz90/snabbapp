@@ -1,53 +1,13 @@
-export const COLORS = {
-  // Backgrounds
-  background: "#0a0a0a",
-  backgroundSecondary: "#0f0f0f",
-  backgroundTertiary: "#161616",
-  backgroundCard: "#111111",
-
-  // Primary brand (blue)
-  primary: "#1a7fe8",
-  primaryPressed: "#1568c5",
-  primaryLight: "#3b9aff",
-
-  // Secondary
-  secondary: "#2d3748",
-  secondaryPressed: "#1a202c",
-
-  // Accent (cyan)
-  accent: "#00d4ff",
-  accentPressed: "#00b8d9",
-
-  // Overlay / glass
-  overlayBackground: "rgba(255,255,255,0.08)",
-  overlayPressed: "rgba(255,255,255,0.14)",
-  overlayBorderSubtle: "rgba(255,255,255,0.12)",
-  backgroundPrimaryPressed: "rgba(0,0,0,0.05)",
-
-  // Text
-  textPrimary: "#ffffff",
-  textSecondary: "#a0aec0",
-  textTertiary: "#718096",
-  textInverse: "#ffffff",
-  textMuted: "#4a5568",
-
-  // Borders
-  borderFocus: "rgba(255,255,255,0.25)",
-  border: "rgba(255,255,255,0.08)",
-  borderSubtle: "rgba(255,255,255,0.05)",
-
-  // Gradient helpers (used as string in style)
-  gradientBrand: "linear-gradient(135deg, #1a7fe8 0%, #00d4ff 100%)",
-  gradientHero: "linear-gradient(135deg, #1a7fe8 0%, #a855f7 50%, #00d4ff 100%)",
-
-  // Status
-  success: "#48bb78",
-  warning: "#ed8936",
-  error: "#fc8181",
-};
+/**
+ * Aktivt färgtema.
+ * Byt tema genom att ändra: THEME.natt | THEME.dimma | THEME.ocean | THEME.ember | THEME.violett
+ */
+import { THEME } from "./themes";
+export const COLORS = THEME.violett;
 
 export const FONT_FAMILY = {
-  primary: "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  primary:
+    "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   mono: "var(--font-geist-mono), 'Courier New', monospace",
 };
 
@@ -179,12 +139,12 @@ export const OPACITY = {
 };
 
 export const SHADOWS = {
-  sm: "0 1px 3px rgba(0,0,0,0.4)",
-  md: "0 4px 12px rgba(0,0,0,0.5)",
-  lg: "0 8px 32px rgba(0,0,0,0.6)",
-  glow: "0 0 40px rgba(26,127,232,0.3)",
-  glowAccent: "0 0 40px rgba(0,212,255,0.25)",
-  glowFeatured: "0 0 60px rgba(26,127,232,0.4), 0 0 120px rgba(168,85,247,0.2)",
+  sm: `0 1px 3px ${COLORS.shadowBase}`,
+  md: `0 4px 12px ${COLORS.shadowBase}`,
+  lg: `0 8px 32px ${COLORS.shadowBase}`,
+  glow: `0 0 40px ${COLORS.primary}4d`,
+  glowAccent: `0 0 40px ${COLORS.accent}40`,
+  glowFeatured: `0 0 60px ${COLORS.primary}66, 0 0 120px ${COLORS.accent}33`,
 };
 
 export const TRANSITIONS = {

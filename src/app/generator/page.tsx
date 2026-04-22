@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import IdeaCard from "@/components/generator/IdeaCard";
+import Navbar from "@/components/Navbar";
 import { COLORS, SHADOWS, BORDER_RADIUS, SPACING } from "@/constants";
 import type { Idea, FormValues } from "./types";
 
@@ -176,7 +178,25 @@ export default function GeneratorPage() {
 
   return (
     <div className="min-h-screen" style={{ background: COLORS.background }}>
-      <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6">
+      <Navbar />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6" style={{ paddingTop: SPACING.x16, paddingBottom: SPACING.x20 }}>
+
+        {/* ── Breadcrumb ────────────────────────────────────────────────────── */}
+        <div className="flex items-center gap-2 mb-10 text-sm" style={{ color: COLORS.textTertiary }}>
+          <Link
+            href="/"
+            style={{ color: COLORS.textTertiary, textDecoration: "none", transition: "color 0.15s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = COLORS.textSecondary)}
+            onMouseLeave={(e) => (e.currentTarget.style.color = COLORS.textTertiary)}
+          >
+            Hem
+          </Link>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <span style={{ color: COLORS.textSecondary }}>App Idea Generator</span>
+        </div>
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <div className="text-center mb-14">
@@ -479,6 +499,57 @@ export default function GeneratorPage() {
             </p>
           </div>
         )}
+
+        {/* ── Footer CTA ────────────────────────────────────────────────────── */}
+        <div
+          className="mt-20 rounded-2xl px-8 py-10 text-center"
+          style={{
+            background: COLORS.backgroundCard,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: BORDER_RADIUS["2xl"],
+          }}
+        >
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: COLORS.textTertiary }}>
+            Redo att bygga?
+          </p>
+          <h3 className="text-2xl font-bold mb-3" style={{ color: COLORS.textPrimary, letterSpacing: "-0.5px" }}>
+            Förvandla din idé till en riktig produkt
+          </h3>
+          <p className="text-sm mb-6 max-w-md mx-auto leading-relaxed" style={{ color: COLORS.textSecondary }}>
+            SnabbApp bygger din MVP på 2–4 veckor. Snabb, prisvärd och professionell.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="mailto:hej@snabbapp.se"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-xl transition-all duration-200"
+              style={{
+                background: COLORS.gradientBrand,
+                color: COLORS.textInverse,
+                textDecoration: "none",
+                boxShadow: SHADOWS.glow,
+                borderRadius: BORDER_RADIUS.xl,
+              }}
+            >
+              Boka ett kostnadsfritt samtal
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-xl transition-all duration-150"
+              style={{
+                background: COLORS.backgroundSecondary,
+                border: `1px solid ${COLORS.border}`,
+                color: COLORS.textSecondary,
+                textDecoration: "none",
+                borderRadius: BORDER_RADIUS.xl,
+              }}
+            >
+              Läs mer om oss
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

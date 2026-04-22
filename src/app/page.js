@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AppText from "@/components/AppText";
 import AppButton from "@/components/AppButton";
+import Navbar from "@/components/Navbar";
 import { COLORS, SHADOWS, BORDER_RADIUS, SPACING } from "@/constants";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -58,61 +59,7 @@ function IconStar() {
   );
 }
 
-// ─── Navbar ───────────────────────────────────────────────────────────────────
-
-function Navbar() {
-  return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: `${SPACING.x4} ${SPACING.x8}`,
-        background: COLORS.navbarBackground,
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: `1px solid ${COLORS.border}`,
-      }}
-    >
-      <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-        <Image
-          src="/snabbapplogo.png"
-          alt="SnabbApp"
-          width={160}
-          height={44}
-          style={{ objectFit: "contain" }}
-          priority
-        />
-      </Link>
-
-      <div style={{ display: "flex", alignItems: "center", gap: SPACING.x6 }}>
-        <a href="#projekt" style={{ textDecoration: "none" }}>
-          <AppText size="bodySmall" weight="medium" color={COLORS.textSecondary} style={{ transition: "color 0.2s" }}>
-            Projekt
-          </AppText>
-        </a>
-        <a href="#hur-det-fungerar" style={{ textDecoration: "none" }}>
-          <AppText size="bodySmall" weight="medium" color={COLORS.textSecondary}>
-            Hur det fungerar
-          </AppText>
-        </a>
-        <AppButton
-          href="mailto:hej@snabbapp.se"
-          variant="primary"
-          size="small"
-          rightIcon={<IconArrow />}
-        >
-          Boka ett samtal
-        </AppButton>
-      </div>
-    </nav>
-  );
-}
+// Navbar is now a shared component at @/components/Navbar
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
@@ -125,7 +72,7 @@ function Hero() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: `120px ${SPACING.x8} ${SPACING.x20}`,
+        padding: `${SPACING.x20} ${SPACING.x8} ${SPACING.x20}`,
         position: "relative",
         overflow: "hidden",
         textAlign: "center",

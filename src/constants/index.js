@@ -3,7 +3,7 @@
  * Byt tema genom att ändra: THEME.natt | THEME.dimma | THEME.ocean | THEME.ember | THEME.violett
  */
 import { THEME } from "./themes";
-export const COLORS = THEME.violett;
+export const COLORS = THEME.ocean;
 
 export const FONT_FAMILY = {
   primary:

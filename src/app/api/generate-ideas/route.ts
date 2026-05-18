@@ -40,7 +40,7 @@ Varje idé måste innehålla:
 - Kort beskrivning
 - Kärnfunktioner (3–5 punkter)
 - Varför det kan fungera
-- MVP-scope (mycket kort)
+- MVP-omfattning (mycket kort)
 
 Svara ENBART med giltig JSON i detta exakta format (utan kodblock eller förklaringar):
 [

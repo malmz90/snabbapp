@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SnabbApp – Bygg din MVP på veckor, inte månader",
+  title: "SnabbApp – Bygg din MVP på veckor inte månader",
   description:
-    "Vi förvandlar din idé till en marknadsredo MVP på 2–4 veckor. Snabb, prisvärd och professionell webbutveckling.",
+    "Vi förvandlar din idé till en marknadsredo MVP på 2–4 veckor, så att du snabbt kan testa appen mot riktiga användare.",
 };
 
 export default function RootLayout({ children }) {

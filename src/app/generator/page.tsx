@@ -20,37 +20,37 @@ function withAlpha(hex: string, alpha: number): string {
 // ─── Options ──────────────────────────────────────────────────────────────────
 
 const INDUSTRIES = [
-  { value: "Health & Fitness", label: "Hälsa & Fitness" },
-  { value: "Education", label: "Utbildning" },
-  { value: "Finance", label: "Finans" },
-  { value: "Gaming", label: "Gaming" },
-  { value: "Productivity", label: "Produktivitet" },
-  { value: "AI Tools", label: "AI-verktyg" },
-  { value: "E-commerce", label: "E-handel" },
-  { value: "Social", label: "Sociala medier" },
-  { value: "Lifestyle", label: "Livsstil" },
-  { value: "Other", label: "Övrigt" },
+  { value: "Hälsa och träning", label: "Hälsa och träning" },
+  { value: "Utbildning", label: "Utbildning" },
+  { value: "Finans", label: "Finans" },
+  { value: "Spel", label: "Spel" },
+  { value: "Produktivitet", label: "Produktivitet" },
+  { value: "AI-verktyg", label: "AI-verktyg" },
+  { value: "E-handel", label: "E-handel" },
+  { value: "Sociala medier", label: "Sociala medier" },
+  { value: "Livsstil", label: "Livsstil" },
+  { value: "Övrigt", label: "Övrigt" },
 ];
 
 const PLATFORMS = [
-  { value: "Mobile App", label: "Mobilapp", icon: "📱" },
-  { value: "Web App", label: "Webbapp", icon: "🌐" },
-  { value: "Desktop App", label: "Skrivbordsapp", icon: "💻" },
-  { value: "Browser Extension", label: "Webbläsar-\ntillägg", icon: "🔌" },
+  { value: "Mobilapp", label: "Mobilapp", icon: "📱" },
+  { value: "Webbapp", label: "Webbapp", icon: "🌐" },
+  { value: "Skrivbordsapp", label: "Skrivbordsapp", icon: "💻" },
+  { value: "Webbläsartillägg", label: "Webbläsar-\ntillägg", icon: "🔌" },
 ];
 
 const MONETIZATIONS = [
-  { value: "Subscription", label: "Prenumeration" },
-  { value: "One-time Purchase", label: "Engångsköp" },
-  { value: "Freemium", label: "Freemium" },
-  { value: "Ads", label: "Annonsering" },
-  { value: "Marketplace", label: "Marknadsplats" },
+  { value: "Prenumeration", label: "Prenumeration" },
+  { value: "Engångsköp", label: "Engångsköp" },
+  { value: "Gratis med premiumval", label: "Gratis med premiumval" },
+  { value: "Annonsering", label: "Annonsering" },
+  { value: "Marknadsplats", label: "Marknadsplats" },
 ];
 
 const COMPLEXITIES = [
-  { value: "MVP (Simple)", label: "MVP", desc: "Enkelt & snabbt" },
-  { value: "Medium", label: "Medel", desc: "Balanserat" },
-  { value: "Advanced", label: "Avancerat", desc: "Komplex" },
+  { value: "MVP (enkel)", label: "MVP", desc: "Enkelt & snabbt" },
+  { value: "Medel", label: "Medel", desc: "Balanserat" },
+  { value: "Avancerat", label: "Avancerat", desc: "Komplex" },
 ];
 
 // ─── Random fill data ─────────────────────────────────────────────────────────
@@ -195,7 +195,7 @@ export default function GeneratorPage() {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <span style={{ color: COLORS.textSecondary }}>App Idea Generator</span>
+          <span style={{ color: COLORS.textSecondary }}>App-idégenerator</span>
         </div>
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
@@ -209,13 +209,13 @@ export default function GeneratorPage() {
               borderRadius: BORDER_RADIUS.round,
             }}
           >
-            AI-driven generator
+            AI-baserad idégenerator
           </span>
           <h1
             className="text-4xl sm:text-5xl font-extrabold mb-4"
             style={{ color: COLORS.textPrimary, letterSpacing: "-1.5px", lineHeight: "1.1" }}
           >
-            App Idea Generator
+            App-idégenerator
           </h1>
           <p
             className="text-base sm:text-lg max-w-xl mx-auto leading-relaxed"

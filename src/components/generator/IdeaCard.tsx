@@ -101,7 +101,7 @@ export default function IdeaCard({ idea, index }: Props) {
 
         {/* MVP scope */}
         <div>
-          <SectionLabel>MVP-scope</SectionLabel>
+          <SectionLabel>MVP-omfattning</SectionLabel>
           <p
             className="mt-3 text-sm leading-relaxed"
             style={{ color: COLORS.textSecondary }}

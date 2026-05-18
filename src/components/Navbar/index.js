@@ -10,7 +10,7 @@ import { COLORS, SPACING, BORDER_RADIUS } from "@/constants";
 const NAV_LINKS = [
   { href: "/#projekt", label: "Projekt" },
   { href: "/#hur-det-fungerar", label: "Hur det fungerar" },
-  { href: "/generator", label: "Idea Generator" },
+  { href: "/generator", label: "Idégenerator" },
 ];
 
 function IconArrow() {

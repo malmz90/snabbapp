@@ -340,7 +340,7 @@ const PROJECTS = [
     name: "Sagokompisen",
     url: "https://sagokompisen.se",
     domain: "sagokompisen.se",
-    tagline: "AI-driven sagoberättare för barn",
+    tagline: "AI-baserad sagoberättare för barn",
     description:
       "En magisk plattform där AI skapar personliga sagor för barn – med rätt karaktärer, rätt nivå och oändlig fantasi. Älskat av föräldrar och barn över hela Sverige.",
     tags: ["AI", "Barn", "Berättande", "Next.js"],
@@ -354,7 +354,7 @@ const PROJECTS = [
     tagline: "Din smarta Twitter-kompanjon",
     description:
       "Verktyg som hjälper dig skriva bättre, engagera mer och växa din publik på X (Twitter) med hjälp av AI-drivna insikter.",
-    tags: ["Social media", "AI", "Produktivitet"],
+    tags: ["Sociala medier", "AI", "Produktivitet"],
     featured: false,
   },
   {
@@ -365,7 +365,7 @@ const PROJECTS = [
     tagline: "Nedtrappning gjord enkelt",
     description:
       "En evidensbaserad app som hjälper användare att trappa ner sin kratomanvändning med personliga scheman och progressspårning.",
-    tags: ["Hälsa", "Harm reduction", "React Native"],
+    tags: ["Hälsa", "Skademinimering", "React Native"],
     featured: false,
   },
 ];
@@ -641,7 +641,7 @@ function Projects() {
 const FEATURES = [
   { icon: "⚡", title: "Snabb leverans", desc: "Din MVP är redo på 2–4 veckor, inte månader." },
   { icon: "🎨", title: "Design ingår", desc: "Modern, responsiv design som dina användare älskar." },
-  { icon: "🔗", title: "Viktiga integrationer", desc: "Betalningar, autentisering, databaser och analytics." },
+  { icon: "🔗", title: "Viktiga integrationer", desc: "Betalningar, autentisering, databaser och analysverktyg." },
   { icon: "🔍", title: "SEO-optimerad", desc: "Byggs med sökmotoroptimering från grunden." },
   { icon: "☁️", title: "Driftsättning", desc: "Vi sätter upp och driftsätter din produkt åt dig." },
   { icon: "🔑", title: "Du äger koden", desc: "Full äganderätt – källkod, domän och infrastruktur." },

@@ -89,7 +89,8 @@ function Hero() {
           width: "600px",
           height: "600px",
           borderRadius: "50%",
-          background: "radial-gradient(ellipse, rgba(26,127,232,0.18) 0%, rgba(168,85,247,0.08) 50%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse, rgba(26,127,232,0.18) 0%, rgba(168,85,247,0.08) 50%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -141,12 +142,7 @@ function Hero() {
 
       {/* Subtext */}
       <div style={{ maxWidth: "560px", marginTop: SPACING.x6 }}>
-        <AppText
-          as="p"
-          variant="lead"
-          align="center"
-          style={{ margin: 0 }}
-        >
+        <AppText as="p" variant="lead" align="center" style={{ margin: 0 }}>
           Förvandla din idé till en marknadsredo produkt – snabbt, prisvärt och
           utan krångel. Vi hanterar tekniken, du fokuserar på din vision.
         </AppText>
@@ -203,7 +199,7 @@ function Hero() {
                 {item}
               </AppText>
             </div>
-          )
+          ),
         )}
       </div>
     </section>
@@ -322,7 +318,12 @@ function HowItWorks() {
             <AppText as="h3" variant="cardTitle" spacingBottom={3}>
               {step.title}
             </AppText>
-            <AppText as="p" size="body" color={COLORS.textSecondary} style={{ margin: 0 }}>
+            <AppText
+              as="p"
+              size="body"
+              color={COLORS.textSecondary}
+              style={{ margin: 0 }}
+            >
               {step.description}
             </AppText>
           </div>
@@ -401,9 +402,6 @@ function ProjectCard({ project }) {
           }}
         >
           <IconStar />
-          <AppText size="caption" weight="bold" color="#ffffff" textTransform="uppercase" style={{ letterSpacing: "0.8px" }}>
-            Bästa projektet
-          </AppText>
         </div>
 
         <div
@@ -419,13 +417,21 @@ function ProjectCard({ project }) {
         >
           {/* Left: content */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: SPACING.x3, marginBottom: SPACING.x4 }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: SPACING.x3,
+                marginBottom: SPACING.x4,
+              }}
+            >
               <div
                 style={{
                   width: "48px",
                   height: "48px",
                   borderRadius: BORDER_RADIUS.lg,
-                  background: "linear-gradient(135deg, rgba(26,127,232,0.3), rgba(168,85,247,0.3))",
+                  background:
+                    "linear-gradient(135deg, rgba(26,127,232,0.3), rgba(168,85,247,0.3))",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -435,7 +441,11 @@ function ProjectCard({ project }) {
                 📚
               </div>
               <div>
-                <AppText as="h3" variant="sectionTitle" style={{ fontSize: "28px", lineHeight: "36px" }}>
+                <AppText
+                  as="h3"
+                  variant="sectionTitle"
+                  style={{ fontSize: "28px", lineHeight: "36px" }}
+                >
                   {project.name}
                 </AppText>
                 <AppText size="bodySmall" color={COLORS.textTertiary}>
@@ -444,15 +454,33 @@ function ProjectCard({ project }) {
               </div>
             </div>
 
-            <AppText as="p" size="bodyLarge" weight="medium" color={COLORS.textSecondary} style={{ margin: `0 0 ${SPACING.x5}` }}>
+            <AppText
+              as="p"
+              size="bodyLarge"
+              weight="medium"
+              color={COLORS.textSecondary}
+              style={{ margin: `0 0 ${SPACING.x5}` }}
+            >
               {project.tagline}
             </AppText>
 
-            <AppText as="p" size="body" color={COLORS.textSecondary} style={{ margin: `0 0 ${SPACING.x6}` }}>
+            <AppText
+              as="p"
+              size="body"
+              color={COLORS.textSecondary}
+              style={{ margin: `0 0 ${SPACING.x6}` }}
+            >
               {project.description}
             </AppText>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: SPACING.x2, marginBottom: SPACING.x6 }}>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: SPACING.x2,
+                marginBottom: SPACING.x6,
+              }}
+            >
               {project.tags.map((tag) => (
                 <span
                   key={tag}
@@ -463,7 +491,11 @@ function ProjectCard({ project }) {
                     padding: `${SPACING.x1} ${SPACING.x3}`,
                   }}
                 >
-                  <AppText size="caption" weight="semiBold" color={COLORS.accent}>
+                  <AppText
+                    size="caption"
+                    weight="semiBold"
+                    color={COLORS.accent}
+                  >
                     {tag}
                   </AppText>
                 </span>
@@ -484,7 +516,8 @@ function ProjectCard({ project }) {
           {/* Right: preview mock */}
           <div
             style={{
-              background: "linear-gradient(135deg, rgba(26,127,232,0.08), rgba(168,85,247,0.08))",
+              background:
+                "linear-gradient(135deg, rgba(26,127,232,0.08), rgba(168,85,247,0.08))",
               border: `1px solid ${COLORS.border}`,
               borderRadius: BORDER_RADIUS.xl,
               padding: SPACING.x8,
@@ -498,8 +531,15 @@ function ProjectCard({ project }) {
             }}
           >
             <div style={{ fontSize: "56px", lineHeight: 1 }}>🧚</div>
-            <AppText as="p" size="bodySmall" color={COLORS.textSecondary} align="center" style={{ margin: 0, maxWidth: "260px" }}>
-              "Det bästa sättet att få barn att älska berättelser – anpassat just för dem."
+            <AppText
+              as="p"
+              size="bodySmall"
+              color={COLORS.textSecondary}
+              align="center"
+              style={{ margin: 0, maxWidth: "260px" }}
+            >
+              "Det bästa sättet att få barn att älska berättelser – anpassat
+              just för dem."
             </AppText>
             <AppText size="caption" color={COLORS.textTertiary} align="center">
               — Nöjd förälder
@@ -556,7 +596,12 @@ function ProjectCard({ project }) {
         </div>
       </div>
 
-      <AppText as="p" size="body" color={COLORS.textSecondary} style={{ margin: 0, flex: 1 }}>
+      <AppText
+        as="p"
+        size="body"
+        color={COLORS.textSecondary}
+        style={{ margin: 0, flex: 1 }}
+      >
         {project.description}
       </AppText>
 
@@ -616,7 +661,8 @@ function Projects() {
         </AppText>
         <div style={{ maxWidth: "480px", margin: `${SPACING.x4} auto 0` }}>
           <AppText as="p" variant="lead" align="center" style={{ margin: 0 }}>
-            Riktiga produkter som löser riktiga problem – byggda snabbt och med hög kvalitet.
+            Riktiga produkter som löser riktiga problem – byggda snabbt och med
+            hög kvalitet.
           </AppText>
         </div>
       </div>
@@ -639,12 +685,36 @@ function Projects() {
 // ─── Features ─────────────────────────────────────────────────────────────────
 
 const FEATURES = [
-  { icon: "⚡", title: "Snabb leverans", desc: "Din MVP är redo på 2–4 veckor, inte månader." },
-  { icon: "🎨", title: "Design ingår", desc: "Modern, responsiv design som dina användare älskar." },
-  { icon: "🔗", title: "Viktiga integrationer", desc: "Betalningar, autentisering, databaser och analysverktyg." },
-  { icon: "🔍", title: "SEO-optimerad", desc: "Byggs med sökmotoroptimering från grunden." },
-  { icon: "☁️", title: "Driftsättning", desc: "Vi sätter upp och driftsätter din produkt åt dig." },
-  { icon: "🔑", title: "Du äger koden", desc: "Full äganderätt – källkod, domän och infrastruktur." },
+  {
+    icon: "⚡",
+    title: "Snabb leverans",
+    desc: "Din MVP är redo på 2–4 veckor, inte månader.",
+  },
+  {
+    icon: "🎨",
+    title: "Design ingår",
+    desc: "Modern, responsiv design som dina användare älskar.",
+  },
+  {
+    icon: "🔗",
+    title: "Viktiga integrationer",
+    desc: "Betalningar, autentisering, databaser och analysverktyg.",
+  },
+  {
+    icon: "🔍",
+    title: "SEO-optimerad",
+    desc: "Byggs med sökmotoroptimering från grunden.",
+  },
+  {
+    icon: "☁️",
+    title: "Driftsättning",
+    desc: "Vi sätter upp och driftsätter din produkt åt dig.",
+  },
+  {
+    icon: "🔑",
+    title: "Du äger koden",
+    desc: "Full äganderätt – källkod, domän och infrastruktur.",
+  },
 ];
 
 function Features() {
@@ -708,7 +778,12 @@ function Features() {
                 <AppText as="h4" size="h5" weight="semiBold" spacingBottom={2}>
                   {f.title}
                 </AppText>
-                <AppText as="p" size="body" color={COLORS.textSecondary} style={{ margin: 0 }}>
+                <AppText
+                  as="p"
+                  size="body"
+                  color={COLORS.textSecondary}
+                  style={{ margin: 0 }}
+                >
                   {f.desc}
                 </AppText>
               </div>
@@ -753,7 +828,8 @@ function CtaSection() {
             width: "500px",
             height: "300px",
             borderRadius: "50%",
-            background: "radial-gradient(ellipse, rgba(26,127,232,0.2) 0%, transparent 70%)",
+            background:
+              "radial-gradient(ellipse, rgba(26,127,232,0.2) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -767,13 +843,26 @@ function CtaSection() {
           Redo att sätta igång?
         </AppText>
 
-        <div style={{ maxWidth: "480px", margin: `${SPACING.x4} auto ${SPACING.x8}` }}>
+        <div
+          style={{
+            maxWidth: "480px",
+            margin: `${SPACING.x4} auto ${SPACING.x8}`,
+          }}
+        >
           <AppText as="p" variant="lead" align="center" style={{ margin: 0 }}>
-            Berätta om din idé – vi svarar inom 24 timmar och bokar ett kostnadsfritt samtal.
+            Berätta om din idé – vi svarar inom 24 timmar och bokar ett
+            kostnadsfritt samtal.
           </AppText>
         </div>
 
-        <div style={{ display: "flex", gap: SPACING.x4, justifyContent: "center", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: SPACING.x4,
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <AppButton
             href="mailto:hej@snabbapp.se"
             variant="primary"

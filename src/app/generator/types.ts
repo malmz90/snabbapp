@@ -12,5 +12,4 @@ export type FormValues = {
   problem: string;
   platform: string;
   monetization: string;
-  complexity: string;
 };

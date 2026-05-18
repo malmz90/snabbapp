@@ -9,7 +9,6 @@ interface GenerateBody {
   problem: string;
   platform: string;
   monetization: string;
-  complexity: string;
 }
 
 export async function POST(req: NextRequest) {
@@ -20,9 +19,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Ogiltigt format." }, { status: 400 });
   }
 
-  const { industry, audience, problem, platform, monetization, complexity } = body;
+  const { industry, audience, problem, platform, monetization } = body;
 
-  if (!industry || !audience?.trim() || !problem?.trim() || !platform || !monetization || !complexity) {
+  if (!industry || !audience?.trim() || !problem?.trim() || !platform || !monetization) {
     return NextResponse.json({ error: "Alla fält krävs." }, { status: 400 });
   }
 
@@ -33,7 +32,7 @@ Målgrupp: ${audience}
 Problem att lösa: ${problem}
 Plattform: ${platform}
 Intäktsmodell: ${monetization}
-Komplexitetsnivå: ${complexity}
+Omfattning: MVP
 
 Varje idé måste innehålla:
 - Appnamn

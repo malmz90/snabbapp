@@ -427,18 +427,24 @@ function ProjectCard({ project }) {
             >
               <div
                 style={{
-                  width: "48px",
-                  height: "48px",
+                  width: "56px",
+                  height: "56px",
                   borderRadius: BORDER_RADIUS.lg,
                   background:
                     "linear-gradient(135deg, rgba(26,127,232,0.3), rgba(168,85,247,0.3))",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "22px",
+                  overflow: "hidden",
                 }}
               >
-                📚
+                <Image
+                  src="/sagokompisen-logo.png"
+                  alt="Sagokompisen"
+                  width={48}
+                  height={48}
+                  style={{ objectFit: "contain" }}
+                />
               </div>
               <div>
                 <AppText

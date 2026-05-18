@@ -35,22 +35,12 @@ const INDUSTRIES = [
 const PLATFORMS = [
   { value: "Mobilapp", label: "Mobilapp", icon: "📱" },
   { value: "Webbapp", label: "Webbapp", icon: "🌐" },
-  { value: "Skrivbordsapp", label: "Skrivbordsapp", icon: "💻" },
-  { value: "Webbläsartillägg", label: "Webbläsar-\ntillägg", icon: "🔌" },
 ];
 
 const MONETIZATIONS = [
   { value: "Prenumeration", label: "Prenumeration" },
   { value: "Engångsköp", label: "Engångsköp" },
-  { value: "Gratis med premiumval", label: "Gratis med premiumval" },
-  { value: "Annonsering", label: "Annonsering" },
-  { value: "Marknadsplats", label: "Marknadsplats" },
-];
-
-const COMPLEXITIES = [
-  { value: "MVP (enkel)", label: "MVP", desc: "Enkelt & snabbt" },
-  { value: "Medel", label: "Medel", desc: "Balanserat" },
-  { value: "Avancerat", label: "Avancerat", desc: "Komplex" },
+  { value: "Gratis", label: "Gratis" },
 ];
 
 // ─── Random fill data ─────────────────────────────────────────────────────────
@@ -87,7 +77,6 @@ const EMPTY_FORM: FormValues = {
   problem: "",
   platform: "",
   monetization: "",
-  complexity: "",
 };
 
 function randomFrom<T>(arr: T[]): T {
@@ -123,7 +112,6 @@ export default function GeneratorPage() {
       problem: randomFrom(RANDOM_PROBLEMS),
       platform: randomFrom(PLATFORMS).value,
       monetization: randomFrom(MONETIZATIONS).value,
-      complexity: randomFrom(COMPLEXITIES).value,
     });
     setError("");
   }
@@ -134,7 +122,6 @@ export default function GeneratorPage() {
     if (!form.problem.trim()) return "Beskriv problemet du vill lösa.";
     if (!form.platform) return "Välj en plattform.";
     if (!form.monetization) return "Välj en intäktsmodell.";
-    if (!form.complexity) return "Välj komplexitetsnivå.";
     return "";
   }
 
@@ -301,7 +288,7 @@ export default function GeneratorPage() {
 
           {/* Platform picker */}
           <FieldWrapper label="Plattform" required className="mb-5">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-1">
+            <div className="grid grid-cols-2 gap-3 mt-1">
               {PLATFORMS.map((p) => {
                 const selected = form.platform === p.value;
                 return (
@@ -330,59 +317,19 @@ export default function GeneratorPage() {
             </div>
           </FieldWrapper>
 
-          {/* Row 3: Monetization + Complexity */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-7">
-            <FieldWrapper label="Intäktsmodell" required>
-              <StyledSelect
-                value={form.monetization}
-                onChange={(v) => setField("monetization", v)}
-                placeholder="Välj modell..."
-              >
-                {MONETIZATIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </StyledSelect>
-            </FieldWrapper>
-
-            <FieldWrapper label="Komplexitet" required hint="Hur avancerad ska appen vara?">
-              <div
-                className="flex rounded-xl overflow-hidden mt-1"
-                style={{ border: `1px solid ${COLORS.border}`, borderRadius: BORDER_RADIUS.xl }}
-              >
-                {COMPLEXITIES.map((c, idx) => {
-                  const selected = form.complexity === c.value;
-                  return (
-                    <button
-                      key={c.value}
-                      type="button"
-                      onClick={() => setField("complexity", c.value)}
-                      className="flex-1 py-3 px-2 flex flex-col items-center transition-all duration-150 cursor-pointer"
-                      style={{
-                        background: selected
-                          ? withAlpha(COLORS.primary, 0.2)
-                          : COLORS.backgroundSecondary,
-                        color: selected ? COLORS.textPrimary : COLORS.textSecondary,
-                        borderRight:
-                          idx < COMPLEXITIES.length - 1
-                            ? `1px solid ${COLORS.border}`
-                            : "none",
-                      }}
-                    >
-                      <span className="text-sm font-bold">{c.label}</span>
-                      <span
-                        className="text-xs mt-0.5"
-                        style={{ color: selected ? COLORS.textSecondary : COLORS.textTertiary }}
-                      >
-                        {c.desc}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </FieldWrapper>
-          </div>
+          <FieldWrapper label="Intäktsmodell" required className="mb-7">
+            <StyledSelect
+              value={form.monetization}
+              onChange={(v) => setField("monetization", v)}
+              placeholder="Välj modell..."
+            >
+              {MONETIZATIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </StyledSelect>
+          </FieldWrapper>
 
           {/* Error message */}
           {error && (
